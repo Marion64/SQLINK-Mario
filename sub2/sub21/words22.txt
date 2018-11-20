@@ -1,0 +1,4 @@
+In chemistry, entropy is represented by the capital letter S, and it is 
+a thermodynamic function that describes the randomness and disorder 
+of molecules based on the number of different arrangements available 
+to them in a given system or reaction.
