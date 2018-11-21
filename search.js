@@ -119,6 +119,10 @@ function Main(){
     searchdocx(ext,text);
 
   }
+  else
+  {
+    console.log("Unsupported Extension")
+  }
 }
 
 Main();
