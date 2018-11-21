@@ -3,16 +3,17 @@ function searchtxt(ext,text){
 
 
   var walk    = require('walk');
-  const fs = require('fs');
+  var fs = require('fs');
   var files   = [];
   var text = text;
   var ext = ext;
 
 // Walker options
-var walker  = walk.walk('C:/Users/user/first-app', { followLinks: false });
+var walker  = walk.walk(__dirname, { followLinks: false });
 
 walker.on('file', function(root, stat, next) {
     // Add this file to the list of files
+
     if(stat.name.split('.').pop() === ext)
     {
 
@@ -55,7 +56,7 @@ function searchdocx(ext,text){
   var ext = ext;
 
 // Walker options
-var walker  = walk.walk('C:/Users/user/first-app', { followLinks: false });
+var walker  = walk.walk(__dirname, { followLinks: false });
 
 
 
@@ -77,7 +78,7 @@ walker.on('file', function(root, stat, next) {
         }
 
     })
-    
+
 
 
     }
@@ -107,12 +108,13 @@ function Main(){
   if(ext == undefined || text == undefined)
   {
     console.log("Usage: node search.js [EXT] [TEXT]");
+
   }
-  if (ext === "txt")
+  else if (ext === "txt")
   {
     searchtxt(ext,text);
   }
-  if(ext === "docx")
+  else if(ext === "docx")
   {
     searchdocx(ext,text);
 
